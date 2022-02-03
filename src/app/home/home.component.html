@@ -1,0 +1,41 @@
+<div class="container">
+    <form [formGroup]="personForm" class="form">
+        <div class="field">
+            <label for="name" class="field-label">Name</label>
+            <input type="text" name="name" id="name" class="field-input" formControlName="name" placeholder="Fullname"
+                required
+                [ngClass]="{'error-outline': personForm.controls.name.errors && personForm.controls.name.dirty}">
+            <div class="error-field" *ngIf="personForm.controls.name.errors && personForm.controls.name.dirty">
+                <span class="error-text" *ngIf="personForm.controls.name?.errors?.required">Name is required</span>
+            </div>
+        </div>
+        <div class="field">
+            <label for="age" class="field-label">Age</label>
+            <input type="number" name="age" id="age" min="1" class="field-input" formControlName="age" required
+                [ngClass]="{'error-outline': personForm.controls.name.errors && personForm.controls.name.dirty}">
+            <div class="error-field" *ngIf="personForm.controls.age.errors && personForm.controls.age.dirty">
+                <span class="error-text" *ngIf="personForm.controls.age?.errors?.required">Age is required</span>
+                <span class="error-text" *ngIf="personForm.controls.age?.errors?.min">Age must be equal or greater than
+                    18</span>
+            </div>
+        </div>
+        <div class="field">
+            <label for="email" class="field-label">Email</label>
+            <input type="text" name="email" id="email" class="field-input" formControlName="email"
+                placeholder="Email Id" required
+                [ngClass]="{'error-outline': personForm.controls.name.errors && personForm.controls.name.dirty}">
+            <div class="error-field" *ngIf="personForm.controls.email.errors && personForm.controls.email.dirty">
+                <span class="error-text" *ngIf="personForm.controls.email?.errors?.required">Email is required</span>
+                <span class="error-text"
+                    *ngIf="!personForm.controls.email?.errors?.required && !personForm.controls.email?.errors?.emailPattern">Email
+                    pattern is wrong</span>
+            </div>
+        </div>
+        <div class="btn">
+            <button (click)="submitForm()" [disabled]="personForm.invalid" class="">Submit</button>
+        </div>
+    </form>
+    <div class="result" *ngIf="result">
+        {{result}}
+    </div>
+</div>

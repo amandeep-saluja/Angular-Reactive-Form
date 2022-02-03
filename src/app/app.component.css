@@ -1,86 +1,144 @@
+*,
+*::before,
+*::after {
+    padding   : 0;
+    margin    : 0;
+    box-sizing: inherit;
+    list-style: none;
+}
+
+body {
+    font-size  : 62.5%;
+    box-sizing : border-box;
+    user-select: none;
+    font-family: Verdana, sans-serif;
+}
+
 .container {
-    font-size: 1rem;
-    margin   : auto;
-    max-width: 20rem;
+    height      : 90vh;
+    /* max-width: 95vw; */
+    margin      : 0 auto;
 }
 
-.form {
-    display        : flex;
-    flex-direction : column;
-    height         : 30vh;
-    justify-content: space-around;
-    align-items    : stretch;
-    margin-top     : 5rem;
-    border         : 0.1rem solid #777;
-    padding        : 1rem 0;
-    border-radius  : 3.5rem;
-    box-shadow     : .01rem .01rem 1rem #777;
+.navbar {
+    background-color: rgba(0, 0, 0, 0.85);
+    font-size       : 1.25rem;
+    /* display      : flex;
+    flex-direction  : row;
+    justify-content : flex-start;
+    align-items     : center; */
+    /* width        : max-content; */
 }
 
-.field {
-    display        : flex;
-    justify-content: space-between;
-    align-items    : center;
-    margin         : 0 2.5rem;
-    flex-wrap      : wrap;
+.navbar-item {
+    padding: 1rem;
+    /* flex: 0 1; */
+    color  : white;
+    cursor : pointer;
+    display: inline-block;
 }
 
-.field-label {
-    text-decoration: solid;
-    text-transform : capitalize;
-    font-weight    : bold;
+.navbar-item:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    color           : white;
 }
 
-.field-input {
-    border       : .05rem solid #777;
-    border-radius: .5rem;
-    padding      : 5px;
-    text-align   : center;
-    outline      : none;
+#active,
+#active:hover {
+    background-color: #04AA6D;
 }
 
-.field-input:active, .field-input:hover, .field-input:focus {
-    border : 1pt solid skyblue;
-    outline: none;
+.about {
+    float: right;
 }
 
-.error-field {
-    color        : red;
-    width        : 100%;
-    text-align   : center;
-    animation    : error 100ms linear 50ms;
-    /* transform: translateX(10px); */
+.header {
+    font-size: 2rem;
+    color    : darkolivegreen;
 }
 
-@keyframes error {
-    0% {
-        transform: translateY(-0.3rem);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
+.section {
+    /* margin: 2.3rem 0; */
+    height: 40vh;
 }
 
-.error-outline {
-    border: 1pt solid red !important;
+.footer-section {
+    height: 41vh;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+/* @media only screen and (max-width: 220px) {
     
 }
+@media only screen and (max-width: 300px) {
+    
+} */
 
-.btn {
-    text-align: center;
+@media only screen and (max-width: 600px) {
+
+    /* .responsive > .navbar-item {
+        display: block !important;
+    }
+    .active {
+        width: max-content;
+        display: inline-block;
+    }
+    .responsive > .navbar-item:not(:first-child) {
+        display: none;
+    }
+    .hamburgur {
+        display: inline-block !important;
+        float: right;
+    }
+    .navbar::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+    .responsive > .about {
+        float: none;
+    } */
+    .navbar {
+        font-size: 1rem;
+    }
+
+    #active {
+        display: inline-block !important;
+    }
+
+    .navbar-item:not(#navbar-icon) {
+        display: none;
+    }
+
+    .about {
+        float: none;
+    }
+
+    .hamburgur {
+        float: right;
+    }
+
+    .navbar::after {
+        content: "";
+        clear  : both;
+        display: table;
+    }
+
+    .responsive>.navbar {
+        display: block;
+    }
+
+    .responsive>.navbar-item:not(#navbar-icon) {
+        display: block;
+    }
+
+    .responsive>#active {
+        width: auto;
+    }
 }
 
-.btn button {
-    border          : none;
-    background-color: black;
-    color           : white;
-    padding         : 0.5rem;
-    border-radius   : 2rem;
-    cursor          : pointer;
-    letter-spacing  : .15rem;
-}
-
-.btn:active {
-    transform: scale(1.05);
+@media (min-width: 601px) {
+    .hamburgur {
+        display: none;
+    }
 }

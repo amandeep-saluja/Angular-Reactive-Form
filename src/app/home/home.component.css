@@ -1,0 +1,88 @@
+.container {
+    font-size: 1rem;
+    margin   : auto;
+    max-width: 20rem;
+}
+
+.form {
+    display        : flex;
+    flex-direction : column;
+    height         : 30vh;
+    justify-content: space-around;
+    align-items    : stretch;
+    margin-top     : 5rem;
+    border         : 0.1rem solid #777;
+    padding        : 1rem 0;
+    border-radius  : 3.5rem;
+    box-shadow     : .01rem .01rem 1rem #777;
+}
+
+.field {
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+    margin         : 0 2.5rem;
+    flex-wrap      : wrap;
+}
+
+.field-label {
+    text-decoration: solid;
+    text-transform : capitalize;
+    font-weight    : bold;
+}
+
+.field-input {
+    border       : .05rem solid #777;
+    border-radius: .5rem;
+    padding      : 5px;
+    text-align   : center;
+    outline      : none;
+}
+
+.field-input:active,
+.field-input:hover,
+.field-input:focus {
+    border : 1pt solid skyblue;
+    outline: none;
+}
+
+.error-field {
+    color       : red;
+    width       : 100%;
+    text-align  : center;
+    animation   : error 100ms linear 50ms;
+    /* transform: translateX(10px); */
+}
+
+@keyframes error {
+    0% {
+        transform: translateY(-0.3rem);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.error-outline {
+    border: 1pt solid red !important;
+
+}
+
+.btn {
+    text-align: center;
+}
+
+.btn button {
+    border          : none;
+    background-color: black;
+    color           : white;
+    padding         : 0.5rem;
+    border-radius   : 2rem;
+    cursor          : pointer;
+    letter-spacing  : .15rem;
+}
+
+.btn:active {
+    transform: scale(1.05);
+}
